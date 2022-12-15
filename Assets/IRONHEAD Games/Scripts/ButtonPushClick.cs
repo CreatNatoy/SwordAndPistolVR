@@ -17,6 +17,9 @@ public class ButtonPushClick : MonoBehaviour
     public TextMeshProUGUI timeText;
 
     public float smooth = 0.1f;
+
+    public UnityEvent OnPushedButton; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -82,8 +85,7 @@ public class ButtonPushClick : MonoBehaviour
 
         }
         //Load Scene
-        
-        
+        OnPushedButton?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
