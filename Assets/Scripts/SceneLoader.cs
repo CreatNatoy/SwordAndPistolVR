@@ -21,9 +21,8 @@ public class SceneLoader : MonoBehaviour
 
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(indexScene);
 
-        while (!asyncLoad.isDone) {
+        while (!asyncLoad.isDone)
             yield return null;
-        }
 
         DisableLoadScreen();
         yield return null; 

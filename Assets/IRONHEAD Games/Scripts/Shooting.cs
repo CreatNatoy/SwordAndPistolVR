@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
    
     public float fireRate = 0.1f;
     public GameObject bulletPrefab;
-
     float elapsedTime;
-
     public Transform nozzleTransform;
-
- 
     public Animator gunAnimator;
+    public OVRInput.Button ShootingButton; 
     
 
     // Update is called once per frame
@@ -22,7 +17,8 @@ public class Shooting : MonoBehaviour
         //elapsed time
         elapsedTime += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0))
+      //  if (Input.GetMouseButtonDown(0))
+         if(OVRInput.GetDown(ShootingButton, OVRInput.Controller.LTouch))
         {
             if (elapsedTime > fireRate)
             {
