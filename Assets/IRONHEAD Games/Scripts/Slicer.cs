@@ -24,6 +24,8 @@ public class Slicer : MonoBehaviour
                 GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, MaterialAfterSlice);
 
                 VibrationManager.Instance.VibrateController(0.3f, 1, 0.3f, OVRInput.Controller.RTouch);
+                
+                ScoreManager.instance.AddScore(ScorePoints.SWORDCUBE_SCOREPOINT );
 
                 upperHullGameobject.transform.position = objectToBeSliced.transform.position;
                 lowerHullGameobject.transform.position = objectToBeSliced.transform.position;

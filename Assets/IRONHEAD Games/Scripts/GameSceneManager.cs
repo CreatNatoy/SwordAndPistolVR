@@ -13,6 +13,11 @@ public class GameSceneManager : MonoBehaviour
     [Header("Managers")]
     public GameObject cubeSpawnManager;
 
+    [Header("GameObject")]
+    public GameObject OVRCameraRig;
+    public GameObject currentScoreUI;
+    public GameObject finalScoreUI; 
+    
     //Audio related
     float audioClipLength;
     private float timeToStartGame = 5.0f;
@@ -31,7 +36,8 @@ public class GameSceneManager : MonoBehaviour
         //Resetting progress bar
         progressBarImage.fillAmount = Mathf.Clamp(0, 0, 1);
 
-
+        finalScoreUI.SetActive(false);
+        currentScoreUI.SetActive(true);
     }
 
 
@@ -61,6 +67,12 @@ public class GameSceneManager : MonoBehaviour
 
         //Disable timer UI
         timerUI_Gameobject.SetActive(false);
+        
+        finalScoreUI.SetActive(true);
+        currentScoreUI.SetActive(false);
+        
+         finalScoreUI.transform.rotation = Quaternion.Euler(Vector3.zero);
+         finalScoreUI.transform.position = OVRCameraRig.transform.position + new Vector3(0, 2.0f, 4.0f);
     }
 
 
