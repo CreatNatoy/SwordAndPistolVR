@@ -20,7 +20,8 @@ public class CubeExplode : MonoBehaviour
         shatteredObject.SetActive(true);
         var shatterAnimation = shatteredObject.GetComponent<Animation>().Play();
 
-
+        VibrationManager.Instance.VibrateController(0.3f, 1, 0.3f, OVRInput.Controller.LTouch);
+        
         Destroy(shatteredObject,1);
     }
 
