@@ -8,6 +8,10 @@
 # SwordAndPistolVR
 A small VR game where you can shoot and cut cubes and score points.
 
+# ATTENTION.
+This project shows a mini-game in VR.
+There are no patterns, code architecture, and optimizations here... do not look for what is not there, there are other projects for this.
+
 ## Implemented
 * Importing Oculus Integration Package
 * VR Pushable Button
@@ -28,3 +32,6 @@ A small VR game where you can shoot and cut cubes and score points.
 - [CreatNatoy](https://github.com/CreatNatoy)
 
 ## Gameplay
+
+https://user-images.githubusercontent.com/76531899/208877496-78e30ad9-c030-4350-b51a-99914ca23d39.mp4
+
