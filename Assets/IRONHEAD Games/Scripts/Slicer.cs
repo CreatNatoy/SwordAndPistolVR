@@ -23,6 +23,8 @@ public class Slicer : MonoBehaviour
                 GameObject upperHullGameobject = slicedObject.CreateUpperHull(objectToBeSliced.gameObject, MaterialAfterSlice);
                 GameObject lowerHullGameobject = slicedObject.CreateLowerHull(objectToBeSliced.gameObject, MaterialAfterSlice);
 
+                PlaySound(objectToBeSliced);
+
                 VibrationManager.Instance.VibrateController(0.3f, 1, 0.3f, OVRInput.Controller.RTouch);
                 
                 ScoreManager.instance.AddScore(ScorePoints.SWORDCUBE_SCOREPOINT );
@@ -39,6 +41,13 @@ public class Slicer : MonoBehaviour
         }
 
     }
+
+    private static void PlaySound(Collider objectToBeSliced) {
+        AudioManager audioManager = AudioManager.instance;
+        audioManager.sliceSound.gameObject.transform.position = objectToBeSliced.transform.position;
+        audioManager.sliceSound.Play();
+    }
+
     private void MakeItPhysical(GameObject obj, Vector3 _velocity)
     {
         obj.AddComponent<MeshCollider>().convex = true;
